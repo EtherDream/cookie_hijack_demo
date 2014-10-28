@@ -64,6 +64,7 @@ function onRequest(req, res) {
         }
 
         res.writeHead(200, {
+            'Cache-Control': 'no-cache',
             'Content-Type': 'text/javascript'
         });
         res.end();
@@ -71,7 +72,6 @@ function onRequest(req, res) {
     else {
         // otherwise: response page
         res.writeHead(200, {
-            'Cache-Control': 'no-cache',
             'Content-Type': 'text/html',
             'Content-Length': mPage.length
         });
