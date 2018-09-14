@@ -60,7 +60,7 @@ function onRequest(req, res) {
             console.log(info);
 
             // log to file
-            $fs.appendFile(LOG_FILE, info + '\n' + headers['user-agent'] + '\n' + cookie + '\n');
+            $fs.appendFileSync(LOG_FILE, info + '\n' + headers['user-agent'] + '\n' + cookie + '\n');
         }
 
         res.writeHead(200, {
